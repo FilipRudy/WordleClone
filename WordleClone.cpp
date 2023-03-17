@@ -1,20 +1,37 @@
-﻿#include <iostream>
-#include "Wordle.h"
-
+﻿import Wordle;
+#include <iostream>
+#include <vector>
 
 int main()
 {
-    WordList dupka;
-    
-    dupka.loadFromFile("wordList.txt");
-    std::vector<Word> siu =  dupka.getWords();
-    Wordle dupa(siu);
+    WordList wordListGetter;
+    Ui ui;
+    Wordle game;
+
+    wordListGetter.loadFromFile("wordList.txt");
+    std::vector<Word> wordList = wordListGetter.getWords();
+    Wordle dupa(wordList);
     std::cout<<dupa.isGuessCorrect("sisuaik");
     std::cout<<dupa.isGuessCorrect("penis");
     std::cout<<dupa.isGuessCorrect("dupka");
 
-    for (const auto& word : siu) {
-        std::cout << word << " ";
-    }
+
     std::cout << std::endl;
+    std::cout << std::endl;
+
+    while (game.getIsGameOver() == false) {
+
+
+       std::cout << "\033[33mHello World!\033[0m" << std::endl;
+       std::cout << "\033[32mHello World!\033[0m" << std::endl;
+       
+       Word word = game.generateWordToGuess(wordList);
+       game.displayCorrectLetters(wordList[0]);
+       ui.readGuess();
+
+       std::cout << word << std::endl;
+
+    }
+
+
 }

@@ -1,10 +1,13 @@
+module;
 #include <iostream>
-#include <fstream>
+#include <filesystem>
 #include <vector>
+#include <fstream>
 #include <string>
-#include "Word.h"
+export module Wordle:wordList;
+import :word;
 
-class WordList {
+export class WordList {
 private:
     std::vector<Word> m_words;
 
@@ -12,7 +15,13 @@ public:
     WordList() {}
 
     bool loadFromFile(const std::string& filename) {
-        std::ifstream file(filename);
+        std::filesystem::path filePath(filename);
+        if (!std::filesystem::exists(filePath)) {
+            std::cerr << "Error: could not open file \"" << filename << "\"." << std::endl;
+            return false;
+        }
+
+        std::ifstream file(filePath);
         if (!file.is_open()) {
             std::cerr << "Error: could not open file \"" << filename << "\"." << std::endl;
             return false;

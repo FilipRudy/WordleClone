@@ -1,6 +1,8 @@
-#pragma once
+module;
 #include <string>
 #include <iostream>
+export module Wordle:result;
+import :word;
 
 class Result {
 private:
