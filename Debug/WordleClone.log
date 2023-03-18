@@ -1,2 +1,12 @@
 ﻿  Trwa skanowanie źródeł pod kątem zależności modułów...
-  WordleClone.vcxproj -> C:\Users\filip\Downloads\WordleClone-main\WordleClone-main\Debug\WordleClone.exe
+  Ui.ixx
+  Trwa kompilowanie…
+  Ui.ixx
+C:\Users\filip\Downloads\WordleClone-main (1)\WordleClone-main\Ui.ixx(115,27): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\Users\filip\Downloads\WordleClone-main (1)\WordleClone-main\Ui.ixx(138,27): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+  Game.ixx
+C:\Users\filip\Downloads\WordleClone-main (1)\WordleClone-main\Game.ixx(24,19): warning C4244: "argument": konwersja z "time_t" do "unsigned int", możliwa utrata danych
+C:\Users\filip\Downloads\WordleClone-main (1)\WordleClone-main\Game.ixx(30,19): warning C4244: "argument": konwersja z "time_t" do "unsigned int", możliwa utrata danych
+  Wordle.ixx
+  WordleClone.cpp
+  WordleClone.vcxproj -> C:\Users\filip\Downloads\WordleClone-main (1)\WordleClone-main\Debug\WordleClone.exe

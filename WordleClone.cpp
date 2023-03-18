@@ -22,7 +22,6 @@ int main()
        //game.displayCorrectLetters(wordList[0]);
        game.startGame(wordToGuess, ui);
 
-       std::cout << wordToGuess << std::endl;
 
     }
 

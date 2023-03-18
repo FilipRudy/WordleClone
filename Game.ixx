@@ -54,9 +54,13 @@ public:
 
 
     void startGame(Word wordToGuess, Ui ui) {
+        Word guess;
         do {
-            ui.displayWordLength(ui.readGuess(), wordToGuess);
+            guess = ui.readGuess();
+            ui.displayWordLength(guess, wordToGuess);
         } while (ui.getAttemptNumber() < 6);
+        isGameOver = true;
+        ui.displayGameOver(guess, wordToGuess);
     }
 
 

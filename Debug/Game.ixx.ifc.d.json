@@ -1,7 +1,7 @@
 {
     "Version": "1.1",
     "Data": {
-        "Source": "c:\\users\\filip\\downloads\\wordleclone-main\\wordleclone-main\\game.ixx",
+        "Source": "c:\\users\\filip\\downloads\\wordleclone-main (1)\\wordleclone-main\\game.ixx",
         "ProvidedModule": "Wordle:game",
         "Includes": [
             "c:\\program files (x86)\\microsoft visual studio\\2019\\community\\vc\\tools\\msvc\\14.29.30133\\include\\fstream",
@@ -353,19 +353,19 @@
         "ImportedModules": [
             {
                 "Name": "Wordle:wordList",
-                "BMI": "C:\\Users\\filip\\Downloads\\WordleClone-main\\WordleClone-main\\Debug\\WordList.ixx.ifc"
+                "BMI": "C:\\Users\\filip\\Downloads\\WordleClone-main (1)\\WordleClone-main\\Debug\\WordList.ixx.ifc"
             },
             {
                 "Name": "Wordle:word",
-                "BMI": "C:\\Users\\filip\\Downloads\\WordleClone-main\\WordleClone-main\\Debug\\Word.ixx.ifc"
+                "BMI": "C:\\Users\\filip\\Downloads\\WordleClone-main (1)\\WordleClone-main\\Debug\\Word.ixx.ifc"
             },
             {
                 "Name": "Wordle:ui",
-                "BMI": "C:\\Users\\filip\\Downloads\\WordleClone-main\\WordleClone-main\\Debug\\Ui.ixx.ifc"
+                "BMI": "C:\\Users\\filip\\Downloads\\WordleClone-main (1)\\WordleClone-main\\Debug\\Ui.ixx.ifc"
             },
             {
                 "Name": "Wordle:result",
-                "BMI": "C:\\Users\\filip\\Downloads\\WordleClone-main\\WordleClone-main\\Debug\\Result.ixx.ifc"
+                "BMI": "C:\\Users\\filip\\Downloads\\WordleClone-main (1)\\WordleClone-main\\Debug\\Result.ixx.ifc"
             }
         ],
         "ImportedHeaderUnits": []

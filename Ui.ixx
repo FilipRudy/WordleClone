@@ -43,8 +43,16 @@ public:
         std::cout << result << "\n";
     }
 
-    static void displayGameOver() {
-        std::cout << "Game over. Better luck next time!\n";
+    static void displayGameOver(Word lastGuess, Word wordToGuess) {
+        if (lastGuess == wordToGuess)
+        {
+            std::cout << "\nGame over. You won!\n";
+        }
+        else
+        {
+            std::cout << "\nGame over. The word to guess was: " << wordToGuess<< " Better luck next time!\n";
+        }
+        
     }
 
     static void displayGameStart() {

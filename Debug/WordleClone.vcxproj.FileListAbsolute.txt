@@ -1,2 +1,3 @@
 C:\Users\filip\Desktop\WordleClone\Debug\WordleClone.exe
 C:\Users\filip\Downloads\WordleClone-main\WordleClone-main\Debug\WordleClone.exe
+C:\Users\filip\Downloads\WordleClone-main (1)\WordleClone-main\Debug\WordleClone.exe
