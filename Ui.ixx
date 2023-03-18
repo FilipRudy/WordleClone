@@ -7,10 +7,19 @@ module;
 #include <iostream>
 export module Wordle:ui;
 import :result;
+import :word;
 
 
 export class Ui {
+private:
+    size_t attemptNumber;
+    
+    std::vector<char> usedLetters;
+
 public:
+    Ui(size_t m_attemptNumber) : attemptNumber(m_attemptNumber), usedLetters(28, ' ') {}
+
+
     static Word readGuess() {
         std::cout << "Enter a 5-letter word without numbers or special characters: ";
         Word guess;
@@ -34,10 +43,6 @@ public:
         std::cout << result << "\n";
     }
 
-    static void displayIncorrectGuess() {
-        std::cout << "Incorrect guess. Please try again.\n\n";
-    }
-
     static void displayGameOver() {
         std::cout << "Game over. Better luck next time!\n";
     }
@@ -46,16 +51,86 @@ public:
         std::cout << "Welcome to Wordle!\n";
     }
 
-    static void displayWordLength(size_t length) {
-        std::cout << "The word to guess is ";
-        for (int i = 0; i < length; i++)
+    size_t getAttemptNumber()
+    {
+        return attemptNumber;
+    }
+
+    void getUsedLetters(Word word)
+    {
+        bool canAddLetter = true;
+
+        for (size_t i = 0; i < word.length(); i++)
+        {
+            for (size_t j = 0; j < usedLetters.size(); j++)
+            {
+                if (word[i] == usedLetters[j])
+                {
+                    canAddLetter = false;
+                }
+            }
+
+            if (canAddLetter)
+            {
+                usedLetters.push_back(word[i]);
+                canAddLetter = true;
+            }
+            else
+            {
+                canAddLetter = true;
+            }
+            
+        }
+
+    }
+
+    void displayUsedLetters()
+    {
+        for (size_t i = 0; i < usedLetters.size(); i++)
+        {
+            if (usedLetters[i] != ' ')
+            {
+                std::cout << usedLetters[i] << " ";
+            }
+            
+        }
+
+        std::cout<< std::endl;
+    }
+
+    void displayWordLength(Word word, Word wordToGuess) {
+        ++attemptNumber;
+        getUsedLetters(word);
+        std::vector<int> letterCorrection = word.checkForLetterCorrection(word, wordToGuess);
+        std::cout << "The word to guess is: ";
+
+        for (int i = 0; i < wordToGuess.length(); i++)
+        {
+            if (letterCorrection[i] == 2)
+            {
+                std::cout << "\033[32m" << word[i] << "\033[0m ";
+            }
+            else if (letterCorrection[i] == 1)
+            {
+                std::cout << "\033[33m" << word[i] << "\033[0m ";
+            }
+            else
+            {
+                std::cout << "_ ";
+            }
+        }
+        std::cout << "and this is your attempt number " << attemptNumber << std::endl;
+        std::cout << "so far you used letters: ";
+        displayUsedLetters();
+    }
+
+    void displayWordLength(Word wordToGuess) {
+        std::cout << "Today's word to guess is: ";
+
+        for (int i = 0; i < wordToGuess.length(); i++)
         {
             std::cout << "_ ";
         }
-        std::cout << "(" << length << ") letters long\n";
-    }
-
-    static void displayWordSoFar(const std::string& wordSoFar) {
-        std::cout << "Word so far: " << wordSoFar << "\n";
+        std::cout << "(" << wordToGuess.length() << ") letters long, please input your guess below\n";
     }
 };

@@ -1,6 +1,7 @@
 module;
 #include <iostream>
 #include <string>
+#include <vector>
 export module Wordle:word;
 
 export class Word {
@@ -11,27 +12,48 @@ public:
     Word() : m_word("") {}
     Word(const std::string& word) : m_word(word) {}
 
-    std::string getWord()
+    std::string getWord() const
     {
         return m_word;
     }
 
-    bool containsLetter(char letter) const {
-        return m_word.find(letter) != std::string::npos;
-    }
+    std::vector<int> checkForLetterCorrection(Word wordToGuess, Word guess)
+    {
+        std::vector<int> lettersPositions;
 
-    bool isCorrect(const std::string& guess) const {
-        if (guess.length() != m_word.length()) {
-            return false;
+        for (size_t i = 0; i < wordToGuess.length(); i++)
+        {
+            lettersPositions.push_back(0);
         }
 
-        for (size_t i = 0; i < m_word.length(); i++) {
-            if (guess[i] != m_word[i]) {
-                return false;
+        for (size_t i = 0; i < wordToGuess.length(); i++)
+        {
+            if (wordToGuess[i] == guess[i])
+            {
+                lettersPositions[i] = 2;
+            }
+            else
+            {
+                for (size_t j = 0; j < wordToGuess.length(); j++)
+                {
+                    if (guess[i] == wordToGuess[j] && wordToGuess[j] != 2)
+                    {
+                        lettersPositions[j] = 1;
+                    }
+                }
             }
         }
+        return lettersPositions;
+    }
 
-        return true;
+    bool isWordInList(std::vector<Word> m_words, Word word)
+    {
+        std::cout << m_words.size();
+        return std::find(m_words.begin(), m_words.end(), word) != m_words.end();
+    }
+
+    size_t length() const {
+        return m_word.length();
     }
 
     friend std::ostream& operator<<(std::ostream& os, const Word& word) {
@@ -45,4 +67,15 @@ public:
         }
         return is;
     }
+
+    char& operator[](size_t index) {
+        return m_word[index];
+    }
+
+    
+
 };
+
+bool operator==(const Word& lhs, const Word& rhs) {
+        return lhs.getWord() == rhs.getWord();
+    }

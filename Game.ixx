@@ -10,6 +10,7 @@ module;
 export module Wordle:game;
 import :wordList;
 import :word;
+import :ui;
 
 export class Wordle {
 private:
@@ -51,8 +52,11 @@ public:
         return wordList[index];
     }
 
-    bool isGuessCorrect(const std::string& guess) const {
-        return m_solution.isCorrect(guess);
+
+    void startGame(Word wordToGuess, Ui ui) {
+        do {
+            ui.displayWordLength(ui.readGuess(), wordToGuess);
+        } while (ui.getAttemptNumber() < 6);
     }
 
 

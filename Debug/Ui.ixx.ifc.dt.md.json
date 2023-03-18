@@ -1,0 +1,12 @@
+{
+    "Version": "1.1",
+    "Data": {
+        "Source": "c:\\users\\filip\\downloads\\wordleclone-main\\wordleclone-main\\ui.ixx",
+        "ProvidedModule": "Wordle:ui",
+        "ImportedModules": [
+            "Wordle:result",
+            "Wordle:word"
+        ],
+        "ImportedHeaderUnits": []
+    }
+}
