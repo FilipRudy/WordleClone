@@ -15,7 +15,7 @@ import :ui;
 export class Wordle {
 private:
     std::vector<Word> m_words;
-    Word m_solution;
+    Word solution;
     bool isGameOver;
 
 public:
@@ -28,7 +28,7 @@ public:
 
         isGameOver = false;
         srand(time(nullptr));
-        m_solution = m_words[rand() % m_words.size()];
+        solution = m_words[rand() % m_words.size()];
     }
 
     bool getIsGameOver() {
@@ -52,11 +52,20 @@ public:
         return wordList[index];
     }
 
+    bool isWordInList(std::vector<Word> words, Word word)
+    {
+        std::cout << words.size();
+        return std::find(words.begin(), words.end(), word) != words.end();
+    }
 
-    void startGame(Word wordToGuess, Ui ui) {
+    void startGame(Word wordToGuess, Ui ui, std::vector<Word> m_words, Word solution) {
         Word guess;
         do {
-            guess = ui.readGuess();
+            guess = ui.readGuess(m_words);
+            if (guess == solution)
+            {
+                break;
+            }
             ui.displayWordLength(guess, wordToGuess);
         } while (ui.getAttemptNumber() < 6);
         isGameOver = true;

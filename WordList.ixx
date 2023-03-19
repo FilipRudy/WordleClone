@@ -29,14 +29,22 @@ public:
 
         std::string word;
         while (file >> word) {
-            m_words.push_back(word);
+            m_words.push_back(Word(word)); // create a new Word object from the string and add it to the vector
         }
+
+        //std::cout << "Loaded " << m_words.size() << " words." << std::endl;
 
         file.close();
         return true;
     }
 
+    bool ifWordExist(const Word& word, std::vector<Word> words)
+    { 
+        return std::find(words.begin(), words.end(), word) != words.end();
+    }
+
     std::vector<Word> getWords() const {
+       
         return m_words;
     }
 };

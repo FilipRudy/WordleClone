@@ -1,7 +1,7 @@
 {
     "Version": "1.1",
     "Data": {
-        "Source": "c:\\users\\filip\\downloads\\wordleclone-main (1)\\wordleclone-main\\wordlist.ixx",
+        "Source": "c:\\users\\filip\\desktop\\wordleclone\\wordlist.ixx",
         "ProvidedModule": "Wordle:wordList",
         "Includes": [
             "c:\\program files (x86)\\microsoft visual studio\\2019\\community\\vc\\tools\\msvc\\14.29.30133\\include\\iostream",
@@ -151,7 +151,7 @@
         "ImportedModules": [
             {
                 "Name": "Wordle:word",
-                "BMI": "C:\\Users\\filip\\Downloads\\WordleClone-main (1)\\WordleClone-main\\Debug\\Word.ixx.ifc"
+                "BMI": "C:\\Users\\filip\\Desktop\\WordleClone\\Debug\\Word.ixx.ifc"
             }
         ],
         "ImportedHeaderUnits": []

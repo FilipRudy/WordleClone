@@ -8,29 +8,40 @@ module;
 export module Wordle:ui;
 import :result;
 import :word;
+import :wordList;
 
 
 export class Ui {
 private:
     size_t attemptNumber;
-    
     std::vector<char> usedLetters;
 
 public:
     Ui(size_t m_attemptNumber) : attemptNumber(m_attemptNumber), usedLetters(28, ' ') {}
 
 
-    static Word readGuess() {
+    static Word readGuess(std::vector<Word> m_words) {
         std::cout << "Enter a 5-letter word without numbers or special characters: ";
         Word guess;
-        std::cin >> guess;
-
-        // Check if the input matches the regular expression pattern
+        WordList wordList;
         std::regex pattern("[a-zA-Z]{5}");
+        std::cin >> guess;
+        if(!wordList.ifWordExist(guess, m_words))
+        {   
+            if (!std::regex_match(guess.getWord(), pattern))
+            {
+                std::cout << "\nError: Please enter a 5-letter word without numbers or special characters.\n";
+                return readGuess(m_words);  // Call the function recursively to ask for another word
+            }
+            std::cout << "\nError: The word you input doesn't exist\n";
+            return readGuess(m_words);  // Call the function recursively to ask for another word
+        }
+        // Check if the input matches the regular expression pattern
+        
         if (!std::regex_match(guess.getWord(), pattern)) {
             
             std::cout << "\nError: Please enter a 5-letter word without numbers or special characters.\n";
-            return readGuess();  // Call the function recursively to ask for another word
+            return readGuess(m_words);  // Call the function recursively to ask for another word
         }
 
         std::cout << "\n";
@@ -127,7 +138,7 @@ public:
                 std::cout << "_ ";
             }
         }
-        std::cout << "and this is your attempt number " << attemptNumber << std::endl;
+        std::cout << "and this is your attempt number " << attemptNumber + 1 << std::endl;
         std::cout << "so far you used letters: ";
         displayUsedLetters();
     }

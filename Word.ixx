@@ -46,11 +46,6 @@ public:
         return lettersPositions;
     }
 
-    bool isWordInList(std::vector<Word> m_words, Word word)
-    {
-        std::cout << m_words.size();
-        return std::find(m_words.begin(), m_words.end(), word) != m_words.end();
-    }
 
     size_t length() const {
         return m_word.length();

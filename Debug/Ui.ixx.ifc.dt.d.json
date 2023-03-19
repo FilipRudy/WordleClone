@@ -1,7 +1,7 @@
 {
     "Version": "1.1",
     "Data": {
-        "Source": "c:\\users\\filip\\downloads\\wordleclone-main (1)\\wordleclone-main\\ui.ixx",
+        "Source": "c:\\users\\filip\\desktop\\wordleclone\\ui.ixx",
         "ProvidedModule": "",
         "Includes": [
             "c:\\program files (x86)\\microsoft visual studio\\2019\\community\\vc\\tools\\msvc\\14.29.30133\\include\\fstream",
