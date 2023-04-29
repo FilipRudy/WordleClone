@@ -17,10 +17,12 @@ private:
     std::vector<Word> m_words;
     Word solution;
     bool isGameOver;
+    bool isGameWon;
 
 public:
     Wordle() {
         isGameOver = false;
+        isGameWon = false;
         srand(time(nullptr));
     }
 
@@ -33,6 +35,10 @@ public:
 
     bool getIsGameOver() {
         return isGameOver;
+    }
+
+    bool getIsGameWon() {
+        return isGameWon;
     }
 
     Word generateWordToGuess(std::vector<Word> wordList) {
@@ -58,35 +64,18 @@ public:
         return std::find(words.begin(), words.end(), word) != words.end();
     }
 
-    void startGame(Word wordToGuess, Ui ui, std::vector<Word> m_words, Word solution) {
+    void startGame(Word wordToGuess, Ui& ui, std::vector<Word> m_words, Word solution) {
         Word guess;
         do {
             guess = ui.readGuess(m_words);
             if (guess == solution)
             {
+                isGameWon = true;
                 break;
             }
             ui.displayWordLength(guess, wordToGuess);
         } while (ui.getAttemptNumber() < 6);
         isGameOver = true;
-        ui.displayGameOver(guess, wordToGuess);
     }
-
-
-    static void displayCorrectLetters(const Word& guess) {
-        HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
-
-        // ustawienie koloru tekstu na niebieski
-        SetConsoleTextAttribute(hConsole, FOREGROUND_BLUE);
-
-        // wyœwietlenie napisu w niebieskim kolorze
-        std::cout << "To jest niebieski tekst" << std::endl;
-
-
-        // przywrócenie domyœlnych kolorów
-        SetConsoleTextAttribute(hConsole, FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE);
-
-    }
-
 
 };

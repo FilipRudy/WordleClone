@@ -2,7 +2,7 @@
     "Version": "1.1",
     "Data": {
         "Source": "c:\\users\\filip\\desktop\\wordleclone\\result.ixx",
-        "ProvidedModule": "Wordle:result",
+        "ProvidedModule": "",
         "Includes": [
             "c:\\program files (x86)\\microsoft visual studio\\2019\\community\\vc\\tools\\msvc\\14.29.30133\\include\\string",
             "c:\\program files (x86)\\microsoft visual studio\\2019\\community\\vc\\tools\\msvc\\14.29.30133\\include\\yvals_core.h",
@@ -114,12 +114,7 @@
             "c:\\program files (x86)\\microsoft visual studio\\2019\\community\\vc\\tools\\msvc\\14.29.30133\\include\\clocale",
             "c:\\program files (x86)\\windows kits\\10\\include\\10.0.22000.0\\ucrt\\locale.h"
         ],
-        "ImportedModules": [
-            {
-                "Name": "Wordle:word",
-                "BMI": "C:\\Users\\filip\\Desktop\\WordleClone\\Debug\\Word.ixx.ifc.dt"
-            }
-        ],
+        "ImportedModules": [],
         "ImportedHeaderUnits": []
     }
 }

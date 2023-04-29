@@ -5,3 +5,4 @@ export import :game;
 export import :wordList;
 export import :ui;
 export import :result;
+export import :scoreboard;

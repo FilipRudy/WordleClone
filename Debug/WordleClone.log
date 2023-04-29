@@ -1,9 +1,8 @@
 ﻿  Trwa skanowanie źródeł pod kątem zależności modułów...
-  Game.ixx
+  Scoreboard.ixx
   Trwa kompilowanie…
-  Game.ixx
-C:\Users\filip\Desktop\WordleClone\Game.ixx(24,19): warning C4244: "argument": konwersja z "time_t" do "unsigned int", możliwa utrata danych
-C:\Users\filip\Desktop\WordleClone\Game.ixx(30,19): warning C4244: "argument": konwersja z "time_t" do "unsigned int", możliwa utrata danych
+  Scoreboard.ixx
   Wordle.ixx
   WordleClone.cpp
+     Trwa tworzenie biblioteki C:\Users\filip\Desktop\WordleClone\Debug\WordleClone.lib i obiektu C:\Users\filip\Desktop\WordleClone\Debug\WordleClone.exp
   WordleClone.vcxproj -> C:\Users\filip\Desktop\WordleClone\Debug\WordleClone.exe

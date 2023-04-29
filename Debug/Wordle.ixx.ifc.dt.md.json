@@ -8,7 +8,8 @@
             "Wordle:game",
             "Wordle:wordList",
             "Wordle:ui",
-            "Wordle:result"
+            "Wordle:result",
+            "Wordle:scoreboard"
         ],
         "ImportedHeaderUnits": []
     }

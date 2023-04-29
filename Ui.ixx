@@ -50,10 +50,6 @@ public:
 
 
 
-    static void displayResult(const Result& result) {
-        std::cout << result << "\n";
-    }
-
     static void displayGameOver(Word lastGuess, Word wordToGuess) {
         if (lastGuess == wordToGuess)
         {
@@ -117,30 +113,72 @@ public:
         std::cout<< std::endl;
     }
 
+    char displayHighscores()
+    {
+
+        std::cout << "Would you like to see all records?" << std::endl;
+        std::cout << "0 - don't display records" << std::endl;
+        std::cout << "1 - display records" << std::endl;
+        char input = readUserInput();
+
+        std::cout << std::endl;
+        return input;
+    }
+
+    char displaySaveHighscore()
+    {
+        
+        std::cout << "Would you like to save your record?" << std::endl;
+        std::cout << "0 - don't save the record" << std::endl;
+        std::cout << "1 - save the record" << std::endl;
+        char input = readUserInput();
+        
+        std::cout << std::endl;
+        return input;
+    }
+
+    char readUserInput()
+    {
+        char input;
+        std::cin >> input;
+        if (input != '0' && input != '1')
+        {
+            std::cout << "Please input one of the correct numbers" << std::endl;
+            std::cout << "0 - don't save the record" << std::endl;
+            std::cout << "1 - save the record" << std::endl;
+            readUserInput();
+        }
+        return input;
+    }
+
     void displayWordLength(Word word, Word wordToGuess) {
         ++attemptNumber;
-        getUsedLetters(word);
-        std::vector<int> letterCorrection = word.checkForLetterCorrection(word, wordToGuess);
-        std::cout << "The word to guess is: ";
-
-        for (int i = 0; i < wordToGuess.length(); i++)
+        if (attemptNumber != 6)
         {
-            if (letterCorrection[i] == 2)
-            {
-                std::cout << "\033[32m" << word[i] << "\033[0m ";
-            }
-            else if (letterCorrection[i] == 1)
-            {
-                std::cout << "\033[33m" << word[i] << "\033[0m ";
-            }
-            else
-            {
-                std::cout << "_ ";
-            }
+            getUsedLetters(word);
+            std::vector<int> letterCorrection = word.checkForLetterCorrection(word, wordToGuess);
+            std::cout << "The word to guess is: ";
+
+            for (int i = 0; i < wordToGuess.length(); i++)
+                {
+                    if (letterCorrection[i] == 2)
+                          {
+                     std::cout << "\033[32m" << word[i] << "\033[0m ";
+                          }
+                     else if (letterCorrection[i] == 1)
+                          {
+                     std::cout << "\033[33m" << word[i] << "\033[0m ";
+                          }
+                     else
+                         {
+                     std::cout << "_ ";
+                          }
+                }
+                std::cout << "and this is your attempt number " << attemptNumber + 1 << std::endl;
+                std::cout << "so far you used letters: ";
+                displayUsedLetters();
         }
-        std::cout << "and this is your attempt number " << attemptNumber + 1 << std::endl;
-        std::cout << "so far you used letters: ";
-        displayUsedLetters();
+        
     }
 
     void displayWordLength(Word wordToGuess) {

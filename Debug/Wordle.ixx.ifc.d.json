@@ -24,6 +24,10 @@
             {
                 "Name": "Wordle:wordList",
                 "BMI": "C:\\Users\\filip\\Desktop\\WordleClone\\Debug\\WordList.ixx.ifc"
+            },
+            {
+                "Name": "Wordle:scoreboard",
+                "BMI": "C:\\Users\\filip\\Desktop\\WordleClone\\Debug\\Scoreboard.ixx.ifc"
             }
         ],
         "ImportedHeaderUnits": []

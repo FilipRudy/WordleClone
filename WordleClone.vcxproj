@@ -142,6 +142,7 @@
   <ItemGroup>
     <ClCompile Include="Game.ixx" />
     <ClCompile Include="Result.ixx" />
+    <ClCompile Include="Scoreboard.ixx" />
     <ClCompile Include="Ui.ixx" />
     <ClCompile Include="Word.ixx" />
     <ClCompile Include="Wordle.ixx" />
