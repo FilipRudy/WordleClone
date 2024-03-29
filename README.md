@@ -4,7 +4,7 @@
 
 ## Description
 
-This project is a C++ implementation of the classic word-guessing game, designed for command-line interfaces. Test your vocabulary skills by guessing the secret word within a limited number of attempts.
+This university project is a C++ implementation of the classic word-guessing game, designed for command-line interfaces. Test your vocabulary skills by guessing the secret word within a limited number of attempts.
 ## Installation
 
 * Clone the repository
