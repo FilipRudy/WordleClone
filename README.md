@@ -1,5 +1,5 @@
 <p align="center">
-<img src="https://raw.githubusercontent.com/Benio101/cpp-logo/master/cpp_logo.png" alt="C++ Logo" width="200" />
+<img src="https://raw.githubusercontent.com/Benio101/cpp-logo/master/cpp_logo.png" alt="C++ Logo" width="150" />
 </p>
 
 ## Description
